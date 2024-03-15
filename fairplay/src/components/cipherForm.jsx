@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Fivefive from "./FiveFiveStatic/FiveFiveStatic";
 
 function CipherForm() {
 	const [plainText, setPlainText] = useState("");
 	const [key, setKey] = useState("");
-	const [cipherText, setCipherText] = useState(""); // State to store the encrypted text
+	const [cipherText, setCipherText] = useState("");
 
 	const handlePlainTextChange = (e) => {
 		setPlainText(e.target.value);
@@ -157,25 +158,30 @@ function CipherForm() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<div>
-				<label htmlFor="plainText">Plain Text:</label>
-				<input
-					type="text"
-					id="plainText"
-					value={plainText}
-					onChange={handlePlainTextChange}
-				/>
-			</div>
-			<div>
-				<label htmlFor="key">Key:</label>
-				<input type="text" id="key" value={key} onChange={handleKeyChange} />
-			</div>
-			<button type="submit">Submit</button>
+		<div>
+			<form onSubmit={handleSubmit}>
+				<div>
+					<label htmlFor="plainText">Plain Text:</label>
+					<input
+						type="text"
+						id="plainText"
+						value={plainText}
+						onChange={handlePlainTextChange}
+					/>
+				</div>
+				<div>
+					<label htmlFor="key">Key:</label>
+					<input type="text" id="key" value={key} onChange={handleKeyChange} />
+				</div>
+				<button type="submit">Submit</button>
+			</form>
 
 			{/* Display the encrypted text */}
 			{cipherText && <div>Cipher Text: {cipherText}</div>}
-		</form>
+
+			{/* Render the Fivefive component and pass cipherText as a prop */}
+			{cipherText && <Fivefive cipherText={cipherText} />}
+		</div>
 	);
 }
 

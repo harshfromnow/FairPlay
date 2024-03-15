@@ -1,0 +1,14 @@
+{
+  "name": "fairplay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nah We'd Win",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.1.6"
+  }
+}

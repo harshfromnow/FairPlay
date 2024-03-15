@@ -3,14 +3,17 @@ import React from "react";
 import "./App.css";
 import CipherForm from "./components/cipherForm";
 
+import Fivefive from './components/FiveFive/Fivefive'
+
 function App() {
-	return (
-		<div className="App">
-			<h1>Playfair Cipher</h1>
-			<CipherForm />
-      {/* // */}
-		</div>
-	);
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <Fivefive />
+      <CipherForm />
+    </>
+  )
 }
 
 export default App;
